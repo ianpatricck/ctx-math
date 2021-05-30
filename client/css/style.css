@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+textarea {
+    resize: none;
+}
+
+.head {
+    margin: 5%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
