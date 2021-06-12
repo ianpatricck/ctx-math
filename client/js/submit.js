@@ -9,12 +9,8 @@ function submit() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: {
-            question: question
-        }
-    }).then((res) => {
-        console.log(res)
-    }).catch((error) => {
-        console.error('Error:', error)
+        body: JSON.stringify({ message: question.value })
     })
+
+    .then(res => res.json())
 }
