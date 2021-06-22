@@ -1,7 +1,7 @@
 var question = document.getElementById('question')
 
-function submit() {
-    fetch('http://localhost:8000/resolve', {
+async function submit() {
+    await fetch('http://localhost:8000/resolve', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
@@ -10,7 +10,7 @@ function submit() {
             'Content-Type': 'application/json'
         },
         body: {
-            question: question
+            question: JSON.stringify({ message: question.value })
         }
     }).then((res) => {
         console.log(res)
