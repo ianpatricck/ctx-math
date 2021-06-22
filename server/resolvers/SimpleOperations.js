@@ -5,7 +5,7 @@
 
 class SimpleOperations {
     interpreter(question) {
-        
+        console.log(question)
     }
 }
 
