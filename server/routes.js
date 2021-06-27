@@ -9,9 +9,8 @@ router
 
     .post('/resolve', (req, res) => {
         if (req.body.message) {
-            question = req.body.message
-
-            simpleOperations.interpreter(question)
+            const basicResult = simpleOperations.basicOperators(req.body.message)
+            res.json({ result: basicResult })
         }
     })
 
