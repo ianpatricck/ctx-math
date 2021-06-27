@@ -4,8 +4,16 @@
  */
 
 class SimpleOperations {
-    interpreter(question) {
-        console.log(question)
+    basicOperators(question) {
+        try {
+            return eval(question)
+        } catch {
+            return false;
+        }
+    }
+
+    contextedOperators() {
+        // ..
     }
 }
 
