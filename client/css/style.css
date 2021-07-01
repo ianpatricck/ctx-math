@@ -38,6 +38,17 @@ textarea:focus, textarea:hover {
     box-shadow: -1px 1px 1px rgb(44, 112, 92), 1px -1px 1px rgb(58, 129, 108);
 }
 
+.result-container {
+    background-color: rgba(90, 172, 138, 0.5);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.result-container i {
+    color: rgb(39, 39, 39);
+}
+
 button {
     display: flex;
     justify-content: center;
