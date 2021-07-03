@@ -1,1 +1,3 @@
-const mongoose = require('mongoose')
+const jsonData = []
+
+module.exports = jsonData
