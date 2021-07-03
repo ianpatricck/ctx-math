@@ -39,7 +39,7 @@ textarea:focus, textarea:hover {
 }
 
 .result-value {
-    background-color: rgba(90, 172, 138, 0.5);
+    background-color: rgba(137, 153, 147, 0.5);
     margin-top: 15px;
     padding: 15px;
     border-radius: 10px;
