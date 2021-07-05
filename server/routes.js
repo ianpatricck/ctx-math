@@ -6,11 +6,15 @@ const SimpleOperations = require('./resolvers/SimpleOperations')
 var simpleOperations = new SimpleOperations()
 
 const TestOperationsStatus = (result = []) => {
-    const finalResult = result.map((operation) => {
-        return !Number(operation) && operation == false ? "It was not possible to perform the calculation" : operation
+    const finalResultArray = result.map((operation) => {
+        if (!Number(operation) && operation == false) {
+            return "Não foi possível realizar o cálculo"
+        } else {
+            return operation
+        }
     })
-
-    return finalResult
+    
+    return finalResultArray.reverse().reduce(element => element)
 }
 
 router
@@ -23,10 +27,12 @@ router
              * 
              */
 
-            let basicOperations = simpleOperations.basicOperators(req.body.message)
+            let basic = simpleOperations.basic(req.body.message)
+            let contextualized = simpleOperations.contextualized(req.body.message)
 
             const result = TestOperationsStatus([
-                basicOperations
+                basic,
+                contextualized
             ])
 
             res.json({ result: result })
