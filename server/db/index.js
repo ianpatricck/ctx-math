@@ -9,7 +9,7 @@ const dataOperationsContext = [
         'subtraction': [
             'menos', 
             'subtraído', 
-            'subtraído'
+            'subtraido'
         ]
     }
 ]
