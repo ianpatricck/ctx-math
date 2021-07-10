@@ -7,7 +7,7 @@ var simpleOperations = new SimpleOperations()
 
 const TestOperationsStatus = (result = []) => {
     const finalResultArray = result.map((operation) => {
-        if (!Number(operation) && operation == false) {
+        if (!Number(operation) && operation == false && operation !== 0) {
             return "Não foi possível realizar o cálculo"
         } else {
             return operation
