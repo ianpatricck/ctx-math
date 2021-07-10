@@ -29,5 +29,4 @@ async function submit() {
     .then(result => {
         createResultMessage(result)
     })
-    
 }

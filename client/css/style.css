@@ -44,6 +44,8 @@ textarea:focus, textarea:hover {
     padding: 15px;
     border-radius: 10px;
     color: rgb(39, 39, 39);
+    animation-name: resultAnimation;
+    animation-duration: 0.5s;
 }
 
 button {
@@ -56,6 +58,7 @@ button {
     width: 50px;
     height: 50px;
     margin: 5px;
+    margin-top: 15px;
 }
 
 button:hover {
@@ -65,4 +68,16 @@ button:hover {
 
 button img {
     height: 60%;
+}
+
+section {
+    margin-top: 50px;
+}
+
+@keyframes resultAnimation {
+    from {
+        margin-right: 150px;
+    } to {
+        margin-right: 0px
+    }
 }
