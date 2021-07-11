@@ -13,8 +13,16 @@ const TestOperationsStatus = (result = []) => {
             return operation
         }
     })
-    
-    return finalResultArray.reverse().reduce(element => element)
+
+    var finalNumber
+
+    finalResultArray.forEach(number => {
+        if (number !== undefined) {
+            finalNumber = number
+        }
+    })
+
+    return finalNumber
 }
 
 router
