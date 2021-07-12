@@ -9,12 +9,6 @@ const dataOperationsContext = [
             'menos', 
             'subtraído', 
             'subtraido'
-        ],
-
-        'multiplication': [
-            'menos', 
-            'subtraído', 
-            'subtraido'
         ]
     }
 ]
