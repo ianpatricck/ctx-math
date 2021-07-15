@@ -2,14 +2,32 @@ const dataOperationsContext = [
     {
         'addition': [
             'mais', 
-            'adicionado'
+            'adicionado',
+            'somado'
         ],
 
         'subtraction': [
             'menos', 
             'subtraído', 
-            'subtraido'
+            'subtraido',
+            'removido',
+            'tirado'
+        ],
+        
+        'multiplication': [
+            'vezes',
+            'multiplicado'
+        ],
+
+        'division': [
+            'dividido',
+            'sobre'
+        ],
+
+        'potentiation': [
+            'elevado'
         ]
+
     }
 ]
 
