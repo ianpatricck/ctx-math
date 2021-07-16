@@ -1,2 +1,2 @@
 # Context IA
-## O programa consiste em resolver questões de matemática
+## Algoritmo que interpreta e retorna um valor preciso

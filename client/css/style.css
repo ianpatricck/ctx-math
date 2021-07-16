@@ -38,6 +38,16 @@ textarea:focus, textarea:hover {
     box-shadow: -1px 1px 1px rgb(44, 112, 92), 1px -1px 1px rgb(58, 129, 108);
 }
 
+.result-value {
+    background-color: rgba(137, 153, 147, 0.5);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    color: rgb(39, 39, 39);
+    animation-name: resultAnimation;
+    animation-duration: 0.5s;
+}
+
 button {
     display: flex;
     justify-content: center;
@@ -48,6 +58,7 @@ button {
     width: 50px;
     height: 50px;
     margin: 5px;
+    margin-top: 15px;
 }
 
 button:hover {
@@ -57,4 +68,16 @@ button:hover {
 
 button img {
     height: 60%;
+}
+
+section {
+    margin-top: 50px;
+}
+
+@keyframes resultAnimation {
+    from {
+        margin-right: 150px;
+    } to {
+        margin-right: 0px
+    }
 }
