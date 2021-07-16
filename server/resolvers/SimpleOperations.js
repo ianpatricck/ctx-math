@@ -1,69 +1,10 @@
 const dataOperationsContext = require('../database')
+const operationLoops = require('./operationLoops')
 
 /**
  * Simple Operations
  * 
  */
-
-function loopForAddition(currentQuestion, keyWords) {
-    let finalFormat
-
-    keyWords.forEach((key) => {
-        if (currentQuestion.includes(key))
-            currentQuestion = currentQuestion.replace(new RegExp(key, 'gi'), '+')
-        finalFormat = currentQuestion
-    })
-
-    return finalFormat
-}
-
-function loopForSubtraction(currentQuestion, keyWords) {
-    let finalFormat
-
-    keyWords.forEach((key) => {
-        if (currentQuestion.includes(key))
-            currentQuestion = currentQuestion.replace(new RegExp(key, 'gi'), '-')
-        finalFormat = currentQuestion
-    })
-
-    return finalFormat
-}
-
-function loopForMultiplication(currentQuestion, keyWords) {
-    let finalFormat
-
-    keyWords.forEach((key) => {
-        if (currentQuestion.includes(key))
-            currentQuestion = currentQuestion.replace(new RegExp(key, 'gi'), '*')
-        finalFormat = currentQuestion
-    })
-
-    return finalFormat
-}
-
-function loopForDivision(currentQuestion, keyWords) {
-    let finalFormat
-
-    keyWords.forEach((key) => {
-        if (currentQuestion.includes(key))
-            currentQuestion = currentQuestion.replace(new RegExp(key, 'gi'), '/')
-        finalFormat = currentQuestion
-    })
-
-    return finalFormat
-}
-
-function loopForPotentiation(currentQuestion, keyWords) {
-    let finalFormat
-
-    keyWords.forEach((key) => {
-        if (currentQuestion.includes(key))
-            currentQuestion = currentQuestion.replace(new RegExp(key, 'gi'), '**')
-        finalFormat = currentQuestion
-    })
-
-    return finalFormat
-}
 
 class SimpleOperations {
     basic(question) {
@@ -83,13 +24,11 @@ class SimpleOperations {
         const divisionArray = dataOperationsContext.map((elements) => elements.division)
         const potentiationArray = dataOperationsContext.map((elements) => elements.potentiation)
 
-        finalQuestion = loopForAddition(question, additionArray.join(' ').split(','))
-        finalQuestion = loopForSubtraction(finalQuestion, subtractionArray.join(' ').split(','))
-        finalQuestion = loopForMultiplication(finalQuestion, multiplicationArray.join(' ').split(','))
-        finalQuestion = loopForDivision(finalQuestion, divisionArray.join(' ').split(','))
-        finalQuestion = loopForPotentiation(finalQuestion, potentiationArray.join(' ').split(','))
-        
-        console.log(finalQuestion)
+        finalQuestion = operationLoops.loopForAddition(question, additionArray.join(' ').split(','))
+        finalQuestion = operationLoops.loopForSubtraction(finalQuestion, subtractionArray.join(' ').split(','))
+        finalQuestion = operationLoops.loopForMultiplication(finalQuestion, multiplicationArray.join(' ').split(','))
+        finalQuestion = operationLoops.loopForDivision(finalQuestion, divisionArray.join(' ').split(','))
+        finalQuestion = operationLoops.loopForPotentiation(finalQuestion, potentiationArray.join(' ').split(','))
 
         return eval(finalQuestion)
     }

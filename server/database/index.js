@@ -27,7 +27,6 @@ const dataOperationsContext = [
         'potentiation': [
             'elevado'
         ]
-
     }
 ]
 
