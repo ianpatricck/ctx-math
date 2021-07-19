@@ -20,13 +20,20 @@ class SimpleOperations {
 
         const operators = dataOperationsContext.reduce(object => object)
 
-        finalQuestion = loopForOperations(finalQuestion, operators.addition, '+')
-        finalQuestion = loopForOperations(finalQuestion, operators.subtraction, '-')
-        finalQuestion = loopForOperations(finalQuestion, operators.multiplication, '*')
-        finalQuestion = loopForOperations(finalQuestion, operators.division, '/')
-        finalQuestion = loopForOperations(finalQuestion, operators.potentiation, '**')
+        try {
 
-        return eval(finalQuestion)
+            finalQuestion = loopForOperations(finalQuestion, operators.addition, '+')
+            finalQuestion = loopForOperations(finalQuestion, operators.subtraction, '-')
+            finalQuestion = loopForOperations(finalQuestion, operators.multiplication, '*')
+            finalQuestion = loopForOperations(finalQuestion, operators.division, '/')
+            finalQuestion = loopForOperations(finalQuestion, operators.potentiation, '**')
+
+            return eval(finalQuestion)
+        } catch {
+            return false
+        }
+
+
     }
 }
 

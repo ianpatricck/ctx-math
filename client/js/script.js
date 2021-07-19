@@ -1,13 +1,27 @@
 var question = document.getElementById('question')
 
 function createResultMessage(result) {
-    if (document.querySelector('.result-value')) {
-        const resultValue = document.querySelector('.result-value')
-        document.querySelector('.result').removeChild(resultValue)
+    // Verifica se existe um valor já exibido na tela
+    // -> Caso exista, exclui a mensagem para evitar duplicação
+    if (document.querySelector('.result-value-success')) {
+        const resultValueSuccess = document.querySelector('.result-value-success')
+        document.querySelector('.result').removeChild(resultValueSuccess)
+    }
+
+    // Verifica se existe uma mensagem de erro
+    // -> Caso exista, exclui a mensagem para evitar duplicação
+    if (document.querySelector('.result-value-danger')) {
+        const resultValueDanger = document.querySelector('.result-value-danger')
+        document.querySelector('.result').removeChild(resultValueDanger)
     }
 
     const resultValue = document.createElement('h3')
-    resultValue.classList.add('result-value')
+
+    if (Number(result.result)) {
+        resultValue.classList.add('result-value-success')
+    } else {
+        resultValue.classList.add('result-value-danger')
+    }
 
     document.querySelector('.result').appendChild(resultValue)
     resultValue.innerText = String(result.result)
@@ -23,10 +37,10 @@ async function submit() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ message: question.value })
-        
+
     })
-    .then(res => res.json())
-    .then(result => {
-        createResultMessage(result)
-    })
+        .then(res => res.json())
+        .then(result => {
+            createResultMessage(result)
+        })
 }
