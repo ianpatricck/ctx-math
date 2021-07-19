@@ -1,5 +1,5 @@
 const dataOperationsContext = require('../database')
-const operationLoops = require('./operationLoops')
+const loopForOperations = require('./operationLoops')
 
 /**
  * Simple Operations
@@ -16,19 +16,15 @@ class SimpleOperations {
     }
 
     contextualized(question) {
-        let finalQuestion
+        let finalQuestion = question
 
-        const additionArray = dataOperationsContext.map((elements) => elements.addition)
-        const subtractionArray = dataOperationsContext.map((elements) => elements.subtraction)
-        const multiplicationArray = dataOperationsContext.map((elements) => elements.multiplication)
-        const divisionArray = dataOperationsContext.map((elements) => elements.division)
-        const potentiationArray = dataOperationsContext.map((elements) => elements.potentiation)
+        const operators = dataOperationsContext.reduce(object => object)
 
-        finalQuestion = operationLoops.loopForAddition(question, additionArray.join(' ').split(','))
-        finalQuestion = operationLoops.loopForSubtraction(finalQuestion, subtractionArray.join(' ').split(','))
-        finalQuestion = operationLoops.loopForMultiplication(finalQuestion, multiplicationArray.join(' ').split(','))
-        finalQuestion = operationLoops.loopForDivision(finalQuestion, divisionArray.join(' ').split(','))
-        finalQuestion = operationLoops.loopForPotentiation(finalQuestion, potentiationArray.join(' ').split(','))
+        finalQuestion = loopForOperations(finalQuestion, operators.addition, '+')
+        finalQuestion = loopForOperations(finalQuestion, operators.subtraction, '-')
+        finalQuestion = loopForOperations(finalQuestion, operators.multiplication, '*')
+        finalQuestion = loopForOperations(finalQuestion, operators.division, '/')
+        finalQuestion = loopForOperations(finalQuestion, operators.potentiation, '**')
 
         return eval(finalQuestion)
     }

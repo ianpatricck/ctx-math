@@ -11,4 +11,3 @@ const loopForOperations = (currentQuestion, keyWords, operation) => {
 }
 
 module.exports = loopForOperations
-
