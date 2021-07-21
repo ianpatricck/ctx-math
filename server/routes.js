@@ -31,16 +31,13 @@ router
         if (req.body.message) {
 
             /*
-             * Tests
+             * This method will test all conditions and return whether or not the calculation failed.
              * 
              */
 
-            let basic = simpleOperations.basic(req.body.message)
-            let contextualized = simpleOperations.contextualized(req.body.message)
-
             const result = TestOperationsStatus([
-                basic,
-                contextualized
+                simpleOperations.basicOperationsInNumbers(req.body.message),
+                simpleOperations.solveOperationsInSimpleContext(req.body.message)
             ])
 
             res.json({ result: result })
