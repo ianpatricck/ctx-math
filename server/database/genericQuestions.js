@@ -1,4 +1,4 @@
-const genericQuestion = [
+const genericQuestions = [
     {
         'division': [
             'a razão entre',
@@ -16,4 +16,4 @@ const genericQuestion = [
     }
 ]
 
-module.exports = genericQuestion
+module.exports = genericQuestions

@@ -21,7 +21,7 @@ const dataOperationsContext = [
 
         'division': [
             'dividido',
-            'sobre'
+            'sobre',
         ],
 
         'potentiation': [
