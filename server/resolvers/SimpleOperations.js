@@ -1,13 +1,23 @@
-const dataOperationsContext = require('../database')
-const loopForOperations = require('./operationLoops')
+const dataOperationsContext = require('../database/dataOperationsContext')
+const genericQuestions = require('../database/genericQuestions')
 
-/**
- * Simple Operations
- * 
- */
+const { loopForOperations, checksForCharactersToBeDeleted } = require('./TreatmentFunctions')
 
 class SimpleOperations {
-    basic(question) {
+
+    constructor() {
+        this.finalQuestion = null
+    }
+
+    /**
+     * Method for doing basic calculations without using context.
+     * 
+     * @param  question 
+     * @returns Number || Boolean
+     *  
+     */
+
+    basicOperationsInNumbers(question) {
         try {
             return eval(question)
         } catch {
@@ -15,25 +25,43 @@ class SimpleOperations {
         }
     }
 
-    contextualized(question) {
-        let finalQuestion = question
+    /**
+     * Check for a generic question, 'already implemented in the database'.
+     * 
+     * @param  question 
+     * @returns String
+     * 
+     */  
+
+    checkForSomethingGeneric(question) {
+        // console.log(genericQuestions)
+    }
+
+    /**
+     * Method that solves contextual problems and tries to bring a correct result.
+     * 
+     * @param  question 
+     * @returns Number || Boolean
+     * 
+     */  
+
+    solveOperationsInSimpleContext(question) {
+        this.finalQuestion = question
 
         const operators = dataOperationsContext.reduce(object => object)
 
         try {
 
-            finalQuestion = loopForOperations(finalQuestion, operators.addition, '+')
-            finalQuestion = loopForOperations(finalQuestion, operators.subtraction, '-')
-            finalQuestion = loopForOperations(finalQuestion, operators.multiplication, '*')
-            finalQuestion = loopForOperations(finalQuestion, operators.division, '/')
-            finalQuestion = loopForOperations(finalQuestion, operators.potentiation, '**')
+            this.finalQuestion = loopForOperations(this.finalQuestion, operators.addition, '+')
+            this.finalQuestion = loopForOperations(this.finalQuestion, operators.subtraction, '-')
+            this.finalQuestion = loopForOperations(this.finalQuestion, operators.multiplication, '*')
+            this.finalQuestion = loopForOperations(this.finalQuestion, operators.division, '/')
+            this.finalQuestion = loopForOperations(this.finalQuestion, operators.potentiation, '**')
 
-            return eval(finalQuestion)
+            return checksForCharactersToBeDeleted(this.finalQuestion)
         } catch {
             return false
         }
-
-
     }
 }
 
