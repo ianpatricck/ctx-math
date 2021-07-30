@@ -7,10 +7,16 @@
     font-family: sans-serif;
 }
 
+body {
+    background-color: rgb(20, 35, 48);
+}
+
 textarea {
     resize: none;
     border: none;
     padding: 5px;
+    background: transparent;
+    color: rgb(173, 173, 173);
 }
 
 textarea:focus, textarea:hover {
@@ -23,7 +29,7 @@ textarea:focus, textarea:hover {
 
 .title {
     font-family: 'PT Sans', sans-serif;
-    color: rgb(67, 185, 150);
+    color: rgb(230, 230, 230);
 }
 
 .center {
@@ -35,11 +41,11 @@ textarea:focus, textarea:hover {
     padding: 5px;
     border: none;
     border-radius: 10px;
-    box-shadow: -1px 1px 1px rgb(44, 112, 92), 1px -1px 1px rgb(58, 129, 108);
+    box-shadow: -1px 1px 1px rgb(230, 230, 230), 1px -1px 1px rgb(230, 230, 230);
 }
 
 .result-value-success {
-    background-color: rgba(82, 179, 150, 0.712);
+    background-color: rgba(43, 69, 90, 0.712);
     margin-top: 15px;
     padding: 15px;
     border-radius: 10px;
@@ -49,7 +55,7 @@ textarea:focus, textarea:hover {
 }
 
 .result-value-danger {
-    background-color: rgba(209, 62, 57, 0.712);
+    background-color: rgba(124, 66, 64, 0.712);
     margin-top: 15px;
     padding: 15px;
     border-radius: 10px;
@@ -64,7 +70,7 @@ button {
     align-items: center;
     border: none;
     border-radius: 8px;
-    background-color: rgb(127, 212, 187);
+    background-color: rgb(41, 86, 138);
     width: 50px;
     height: 50px;
     margin: 5px;
@@ -73,7 +79,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color: rgb(118, 189, 167);
+    background-color: rgb(43, 90, 144);
 }
 
 button img {
