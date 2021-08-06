@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(#8087d3, #f58282);
+}
+
+textarea {
+    resize: none;
+    border: none;
+    padding: 5px;
+    background: transparent;
+    color: rgb(0, 0, 0);
+}
+
+textarea:focus, textarea:hover {
+    outline: 0
+}
+
+.content {
+    margin: 10%;
+}
+
+.title {
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(243, 243, 243);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.right {
+    display: flex;
+    justify-content: right;
+}
+
+.question-container {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(230, 228, 228, 0.39);
+    width: 70vh;
+}
+
+.result-value-success {
+    background-color: rgba(82, 199, 214, 0.596);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    animation-name: resultAnimation;
+    animation-duration: 0.5s;
+}
+
+.result-value-danger {
+    background-color: rgba(184, 99, 118, 0.883);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    animation-name: resultAnimation;
+    animation-duration: 0.5s;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(181, 139, 197);
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    margin-top: 15px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(170, 126, 187);
+}
+
+button img {
+    height: 60%;
+}
+
+section {
+    margin-top: 50px;
+}
+
+@keyframes resultAnimation {
+    from {
+        margin-right: 150px;
+    }
+    to {
+        margin-right: 0px
+    }
+}
+
+.grafic {
+    margin-top: 20vh;
+}
+
