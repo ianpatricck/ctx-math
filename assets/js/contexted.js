@@ -1,6 +1,6 @@
 var question = document.getElementById('question')
 
-const API_URL = 'http://localhost:8000/resolve' // API para envio das questões.
+const API_URL = '' // API para envio das questões.
 
 function createResultMessage(result) {
     // Verifica se existe um valor já exibido na tela
