@@ -24,7 +24,8 @@ textarea:focus, textarea:hover {
 }
 
 .content {
-    margin: 10%;
+    margin: 20vh;
+    height: 60vh;
 }
 
 .title {
@@ -104,8 +105,3 @@ section {
         margin-right: 0px
     }
 }
-
-.grafic {
-    margin-top: 20vh;
-}
-
