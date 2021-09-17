@@ -1,4 +1,4 @@
-const API_URL = '' // API para envio das questões.
+const API_URL = 'https://ctx-math-api.herokuapp.com/resolve' // API para envio das questões.
 
 async function submit() {
     await fetch(API_URL, {
