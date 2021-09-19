@@ -1,4 +1,15 @@
-# Context Math
+# @ Context Math
 ## Algoritmo que interpreta e retorna um valor preciso
 
-- Ainda em desenvolvimento
+<br>
+
+__Fazendo funcionar__
+
+```
+git clone https://github.com/ianpatricck/ctx-math
+```
+
+```
+cd ctx-math/
+yarn start or npm start
+```
